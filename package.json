@@ -1,0 +1,26 @@
+{
+  "name": "twitter-bot",
+  "version": "1.0.0",
+  "description": "i am building a twitter bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gichimux/twitter-bot.git"
+  },
+  "keywords": [
+    "twitter",
+    "bot"
+  ],
+  "author": "gichimu mwai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gichimux/twitter-bot/issues"
+  },
+  "homepage": "https://github.com/gichimux/twitter-bot#readme",
+  "dependencies": {
+    "twit": "^2.2.11"
+  }
+}
