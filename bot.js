@@ -4,16 +4,27 @@ var Twit = require('twit');
 
 var config = require('./config');
 
+var Tweets = require('./tweets');
+
+var i = 1;
+
+  for (i>=1; i<5; i++){a=i;};
+
 var T = new Twit(config);
+setInterval(twitBot, 1000*60*30)
 
-var tweet = { status: 'hello twitter world, all the way from node' };
+twitBot();
 
-T.post('statuses/update', tweet , postTweet );
+function twitBot(){
+  var tweet = { status: Tweets[a] };
 
-function postTweet(err, data, response) {
-  if (err) {
-    console.log("something is wrong");
-  }else{
-   console.log("your bot works!");
- }
+  T.post('statuses/update', tweet , postTweet );
+
+  function postTweet(err, data, response) {
+    if (err) {
+      console.log("something is wrong");
+    }else{
+     console.log("your bot works!");
+   }
+  }
 }
