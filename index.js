@@ -7,8 +7,8 @@ var config = require('./config');
 var T = new Twit(config);
 
 var params =  {
-   q: 'rainbow',
-   count: 5
+   q: 'doggo',
+   count: 2
   }
 
 T.get('search/tweets', params, gotData);
