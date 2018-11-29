@@ -4,6 +4,17 @@ var Twit = require('twit');
 
 var config = require('./config');
 
+var Tweets = require('./tweets');//file containing bot's tweets
+
+var a = 0;
+
+
+for (i in Tweets){//i for-loop to loop through the array of tweets
+	var newTweet = Tweets[i];
+}
+var T = new Twit(config);
+setInterval(twitBot, 1000*60*30)// interval for tweeting
+
 //set up a stream
 var stream = T.stream('user');
 
@@ -13,22 +24,13 @@ stream.on('follow', followed);
 function followed(message){
   var name = message.source.name;
   var screenName = message.source.screen_name;
-  tweetBack('Hey ''@' + 'screenName' + ' isn\'t the world a better place when we smile\.\.\.')
+  tweetBack('@' + screenName + ' isn\'t the world a better place when we smile\.\.\.');
 }
-
-var Tweets = require('./tweets');//file containing bot's tweets
-
-var i = 0;
-
-  for (i>=0; i<5; i++){a=i;};//a for-loop to loop through the array of tweets
-
-var T = new Twit(config);
-setInterval(twitBot, 1000*60*30)// interval for tweeting
 
 twitBot();
 
 function twitBot(){
-  var tweet = { status: Tweets[a] };//a ==index of new tweet in the array
+  var tweet = { status: newTweet  };
 
   T.post('statuses/update', tweet , postTweet );
 
