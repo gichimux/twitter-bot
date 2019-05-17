@@ -1,4 +1,4 @@
-# application name: twitter-bot
+# Application Name: twitter-bot
 
 This is a twitter bot built using javascript front end and backend.
 
